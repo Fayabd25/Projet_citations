@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Générateur de citations</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #e0eafc, #cfdef3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      #card {
+        background: white;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        max-width: 500px;
+      }
+      h1 {
+        font-size: 22px;
+        color: #333;
+      }
+      button {
+        margin-top: 20px;
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card">
+      <h1 id="citation">Chargement...</h1>
+      <button id="new-quote">Nouvelle citation</button>
+    </div>
+
+    <script type="module">
+      import citationAleatoire from "./src/app.js";
+
+      function afficherCitation() {
+        document.getElementById("citation").textContent = citationAleatoire();
+      }
+
+      document.getElementById("new-quote").addEventListener("click", afficherCitation);
+
+      // Affiche une citation au chargement
+      afficherCitation();
+    </script>
+  </body>
+</html>

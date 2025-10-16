@@ -1,4 +1,4 @@
-
+// Tableau de citations
 const citations = [
   "Le succès est la somme de petits efforts répétés jour après jour.",
   "Apprendre sans réfléchir est vain. Réfléchir sans apprendre est dangereux.",
@@ -6,11 +6,11 @@ const citations = [
   "La meilleure façon de prédire l’avenir, c’est de le créer."
 ];
 
-
+// Fonction de génération aléatoire
 function citationAleatoire() {
   const index = Math.floor(Math.random() * citations.length);
   return citations[index];
 }
 
-
-module.exports = citationAleatoire;
+// Export du module
+export default citationAleatoire;

@@ -42,7 +42,7 @@
   </head>
   <body>
     <div id="card">
-      <h1 id="citation">Chargement...</h1>
+      <h1 id="citation"></h1>
       <button id="new-quote">Nouvelle citation</button>
     </div>
 
@@ -53,10 +53,11 @@
         document.getElementById("citation").textContent = citationAleatoire();
       }
 
-      document.getElementById("new-quote").addEventListener("click", afficherCitation);
-
-      // Affiche une citation au chargement
-      afficherCitation();
+      // Affiche une citation immédiatement quand la page est chargée
+      window.addEventListener("DOMContentLoaded", () => {
+        afficherCitation();
+        document.getElementById("new-quote").addEventListener("click", afficherCitation);
+      });
     </script>
   </body>
 </html>
